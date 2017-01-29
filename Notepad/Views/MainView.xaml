@@ -1,0 +1,93 @@
+﻿<toolkit:View
+    x:Class="Notepad.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:interactions="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Notepad.Controls"
+    xmlns:toolkit="using:OverToolkit.Controls"
+    xmlns:shell="using:OverToolkit.Shell"
+    shell:TitleBar.IsVisible="False"
+    shell:TitleBar.Foreground="Black"
+    shell:TitleBar.ButtonHoverForeground="Black"
+    shell:TitleBar.ButtonPressedForeground="Black"
+    DataContext="{Binding Source={StaticResource MainViewModel}}">
+    <shell:TitleBar.Background>
+        <SolidColorBrush Color="{ThemeResource RibbonTitleBarColor}"/>
+    </shell:TitleBar.Background>
+    <shell:TitleBar.ButtonHoverBackground>
+        <SolidColorBrush Color="{ThemeResource WindowHoverColor}"/>
+    </shell:TitleBar.ButtonHoverBackground>
+    <shell:TitleBar.ButtonPressedBackground>
+        <SolidColorBrush Color="{ThemeResource WindowPressedColor}"/>
+    </shell:TitleBar.ButtonPressedBackground>
+    
+    <interactivity:Interaction.Behaviors>
+        <interactions:EventTriggerBehavior EventName="Loaded">
+            <interactions:InvokeCommandAction Command="{Binding ViewLoadedCommand, Mode=OneTime}"/>
+        </interactions:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <controls:RibbonTitleBar Title="{Binding WindowTitle}" BackButtonVisibility="Collapsed"/>
+
+        <controls:Ribbon Grid.Row="1">
+            <controls:RibbonTab Header="Главная"/>
+            <controls:RibbonTab Header="Вид"/>
+
+            <controls:Ribbon.Home>
+                <ComboBox SelectedIndex="0" Width="150"
+                                          VerticalAlignment="Center">
+                    <ComboBoxItem>Segoe UI</ComboBoxItem>
+                    <ComboBoxItem>Segoe UI</ComboBoxItem>
+                    <ComboBoxItem>Segoe UI</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox SelectedIndex="0" Width="50" Margin="12,0,12,0"
+                                          VerticalAlignment="Center">
+                    <ComboBoxItem>15</ComboBoxItem>
+                    <ComboBoxItem>15</ComboBoxItem>
+                    <ComboBoxItem>15</ComboBoxItem>
+                </ComboBox>
+
+                <AppBarToggleButton Icon="Bold" Height="48"/>
+                <AppBarToggleButton Icon="Italic" Height="48"/>
+                <AppBarToggleButton Icon="Underline" Height="48"/>
+
+                <AppBarSeparator/>
+
+                <AppBarButton Icon="Find" Height="48"/>
+            </controls:Ribbon.Home>
+
+            <controls:Ribbon.View>
+                <CheckBox Content="Проверка орфографии" Margin="0,0,16,0"/>
+                <CheckBox Content="Перенос по словам" Margin="0,0,16,0" IsChecked="True"/>
+                <CheckBox Content="Строка состояния" IsChecked="{Binding IsStatusBarVisible, Mode=TwoWay}" Margin="0,0,16,0"/>
+
+                <AppBarSeparator/>
+
+                <AppBarButton Icon="FullScreen" Height="48"/>
+            </controls:Ribbon.View>
+        </controls:Ribbon>
+
+        <TextBox Grid.Row="2" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 SelectionStart="{Binding SelectionStart, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{ThemeResource SuperTextBoxStyle}"
+                 IsSpellCheckEnabled="{Binding isSpellEnabled, Mode=TwoWay}"/>
+
+        <controls:RibbonStatusBar Grid.Row="3"
+                                  SelectedRow="{Binding SelectedRow}"
+                                  SelectedColumn="{Binding SelectedColumn}"
+                                  CharactersCount="{Binding CharactersCount}"
+                                  WordsCount="{Binding WordsCount}"
+                                  Newline="{Binding Newline}"
+                                  Visibility="{Binding IsStatusBarVisible, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>
+</toolkit:View>

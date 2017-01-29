@@ -1,0 +1,12 @@
+﻿<Page
+    x:Class="Notepad.Views.NewView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                Padding="20,12,20,0">
+        <TextBlock Text="Создать" Style="{ThemeResource TitleTextBlockStyle}"
+                   Margin="0,0,0,20"/>
+        <Button Content="Создать" IsEnabled="False"/>
+    </StackPanel>
+</Page>

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="BackstagePaneColor">#F2F2F2</Color>
+    <Color x:Key="RibbonBorderColor">#B5B5B5</Color>
+    <Color x:Key="RibbonTitleBarColor">#DCDCDC</Color>
+    <Color x:Key="RibbonStatusBarColor">#DCDCDC</Color>
+    <Color x:Key="RibbonTabColor">#F3F3F3</Color>
+    <Color x:Key="WindowHoverColor">#C6C6C6</Color>
+    <Color x:Key="WindowInactiveColor">#92A9CC</Color>
+    <Color x:Key="WindowPressedColor">#B0B0B0</Color>
+</ResourceDictionary>

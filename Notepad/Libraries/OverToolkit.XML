@@ -1,0 +1,550 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OverToolkit</name>
+    </assembly>
+    <members>
+        <member name="T:OverToolkit.Common.INavigationHelper">
+            <summary>
+            Интерфейс помощника навигации внутри приложения.
+            </summary>
+        </member>
+        <member name="P:OverToolkit.Common.INavigationHelper.CurrentFrame">
+            <summary>
+            Текущий <see cref="T:Windows.UI.Xaml.Controls.Frame"/> приложения.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Common.Locator">
+            <summary>
+            Представляет локатор помощника навигации. 
+            </summary>
+        </member>
+        <member name="P:OverToolkit.Common.Locator.NavigationHelper">
+            <summary>
+            Помощник навигации.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Common.Locator.InitializeNavigationHelper(OverToolkit.Common.INavigationHelper)">
+            <summary>
+            Инициализирует помощник навигации.
+            </summary>
+            <param name="navigationHelper">Экземпляр помощника навигации.</param>
+        </member>
+        <member name="T:OverToolkit.Common.Messages">
+            <summary>
+            Статический класс, предназначенный для вывода диалоговых окон.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Common.Messages.Show(System.String,System.String)">
+            <summary>
+            Отображает окно сообщения.
+            </summary>
+            <param name="content">Текст, который требуется отобразить в окне.</param>
+            <param name="title">Заголовок окна.</param>
+        </member>
+        <member name="M:OverToolkit.Common.Messages.Show(System.String)">
+            <summary>
+            Отображает окно сообщения.
+            </summary>
+            <param name="content">Текст, который требуется отобразить в окне.</param>
+        </member>
+        <member name="T:OverToolkit.Controls.View">
+            <summary>
+            Представляет расширенную <see cref="T:Windows.UI.Xaml.Controls.Page"/>.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Controls.View.#ctor">
+            <summary>
+            Конструктор по умолчанию.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Enums.DeviceFormFactorType">
+            <summary>
+            Форм-фактор устройства.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.Phone">
+            <summary>
+            Телефон.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.Desktop">
+            <summary>
+            Настольный или портативный ПК.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.Tablet">
+            <summary>
+            Планшетный ПК.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.IoT">
+            <summary>
+            Интернет вещей.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.SurfaceHub">
+            <summary>
+            Surface Hub.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Enums.DeviceFormFactorType.Other">
+            <summary>
+            Другой форм-фактор.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Helpers.DeviceTypeHelper">
+            <summary>
+            Класс-помощник определения типа устройства.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Helpers.DeviceTypeHelper.GetDeviceFormFactorType">
+            <summary>
+            Получает форм-фактор используемого пользователем устройства.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Helpers.HttpHelper">
+            <summary>
+            Класс-помощник для работы с HTTP-протоколом.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Helpers.HttpHelper.GetAsync(System.String)">
+            <summary>
+            Отправляет GET-запрос на сервер.
+            </summary>
+            <param name="url">URL запроса.</param>
+            <returns>Ответ с сервера.</returns>
+        </member>
+        <member name="M:OverToolkit.Helpers.HttpHelper.PostAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Отправляет POST-запрос на сервер.
+            </summary>
+            <param name="url">URL запроса.</param>
+            <param name="parameters">Передаваемые данные.</param>
+            <returns>Ответ с сервера.</returns>
+        </member>
+        <member name="T:OverToolkit.Helpers.LocalizationHelper">
+            <summary>
+            Класс-помощник для работы с локализацией.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Helpers.LocalizationHelper.ToString(System.String)">
+            <summary>
+            Получает строку из ресурсов *.resw.
+            </summary>
+            <param name="resourceName">Название элемента *.resw.</param>
+            <returns>Строка элемента *.resw.</returns>
+        </member>
+        <member name="T:OverToolkit.Mvvm.BindableBase">
+            <summary>
+            Представляет средства для обновления свойств.
+            </summary>
+        </member>
+        <member name="E:OverToolkit.Mvvm.BindableBase.PropertyChanged">
+            <summary>
+            Обработчик события, определяющий, можно ли выполнить действие после изменения.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Mvvm.BindableBase.Set``1(``0@,``0,System.String)">
+            <summary>
+            Устанавливает значение свойству.
+            </summary>
+            <typeparam name="T">Тип.</typeparam>
+            <param name="storage">Хранилище.</param>
+            <param name="value">Значение.</param>
+            <param name="propertyName">Имя свойства.</param>
+            <returns>Возвращает true или false в зависимости от успеха операции.</returns>
+        </member>
+        <member name="M:OverToolkit.Mvvm.BindableBase.RaisePropertyChanged(System.String)">
+            <summary>
+            Уведомляет клиентов об изменении свойства.
+            </summary>
+            <param name="propertyName">Имя свойства.</param>
+        </member>
+        <member name="T:OverToolkit.Mvvm.DelegateCommand">
+            <summary>
+            Представляет команду.
+            </summary>
+        </member>
+        <member name="E:OverToolkit.Mvvm.DelegateCommand.CanExecuteChanged">
+            <summary>
+            Обработчик события, определяющий, можно ли выполнить действие после изменения.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="execute">Действие для выполнения.</param>
+            <param name="canExecute">Определяет, можно ли выполнить действие.</param>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand.CanExecute(System.Object)">
+            <summary>
+            Определяет, можно ли выполнить действие.
+            </summary>
+            <param name="parameter">Пустой параметр.</param>
+            <returns>bool или false.</returns>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand.Execute(System.Object)">
+            <summary>
+            Определяет выполнение.
+            </summary>
+            <param name="parameter">Пустой параметр.</param>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand.RaiseCanExecuteChanged">
+            <summary>
+            Вызывает событие выполнения действия после изменения.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Mvvm.DelegateCommand`1">
+            <summary>
+            Представляет команду с параметром.
+            </summary>
+            <typeparam name="T">Тип.</typeparam>
+        </member>
+        <member name="E:OverToolkit.Mvvm.DelegateCommand`1.CanExecuteChanged">
+            <summary>
+            Обработчик события, определяющий, можно ли выполнить действие после изменения.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean})">
+            <summary>
+            Конструктор.
+            </summary>
+            <param name="execute">Действие для выполнения.</param>
+            <param name="canExecute">Определяет, можно ли выполнить действие.</param>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand`1.CanExecute(System.Object)">
+            <summary>
+            Определяет, можно ли выполнить действие.
+            </summary>
+            <param name="parameter">Пустой параметр.</param>
+            <returns>bool или false.</returns>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand`1.Execute(System.Object)">
+            <summary>
+            Определяет выполнение.
+            </summary>
+            <param name="parameter">Пустой параметр.</param>
+        </member>
+        <member name="M:OverToolkit.Mvvm.DelegateCommand`1.RaiseCanExecuteChanged">
+            <summary>
+            Вызывает событие выполнения действия после изменения.
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Mvvm.IBindable">
+            <summary>
+            Расширение <see cref="T:System.ComponentModel.INotifyPropertyChanged"/>, позволяющее вызывать вручную <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Mvvm.IChangedCommand">
+            <summary>
+            Расширение <see cref="T:System.Windows.Input.ICommand"/>, позволяющее вызывать вручную <see cref="E:System.Windows.Input.ICommand.CanExecuteChanged"/>
+            </summary>
+        </member>
+        <member name="T:OverToolkit.Shell.StatusBar">
+            <summary>
+            Представляет панель состояния для мобильных устройств.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Shell.StatusBar.IsVisibleProperty">
+            <summary>
+            Свойство зависимостей видимости панели состояния.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.GetIsVisible(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает значение видимости панели состояния.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.SetIsVisible(Windows.UI.Xaml.DependencyObject,System.Boolean)">
+            <summary>
+            Задает значение видимости панели состояния.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.IsVisiblePropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение видимости панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.StatusBar.BackgroundProperty">
+            <summary>
+            Свойство зависимостей фонового цвета панели состояния.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.GetBackground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает фоновый цвет панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.SetBackground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает фоновый цвет панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.OnBackgroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение фонового цвета панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.StatusBar.ForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета элементов панели состояния.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.GetForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет элементов панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.SetForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет элементов панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.StatusBar.OnForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета элементов панели состояния.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="T:OverToolkit.Shell.TitleBar">
+            <summary>
+            Представляет панель заголовка окна.
+            </summary>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.IsVisibleProperty">
+            <summary>
+            Свойство зависимостей видимости панели заголовка окна.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetIsVisible(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает значение видимости панели заголовка окна.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetIsVisible(Windows.UI.Xaml.DependencyObject,System.Boolean)">
+            <summary>
+            Задает значение видимости панели заголовка окна.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.IsVisiblePropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение видимости панели заголовка окна.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.BackgroundProperty">
+            <summary>
+            Свойство зависимостей фонового цвета панели заголовка окна.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetBackground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает фоновый цвет панели заголовка окна.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetBackground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает фоновый цвет панели заголовка окна.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnBackgroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение фонового цвета панели заголовка окна.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ButtonHoverBackgroundProperty">
+            <summary>
+            Свойство зависимостей фонового цвета кнопок управления окном при наведении.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetButtonHoverBackground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает фоновый цвет кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetButtonHoverBackground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает фоновый цвет кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnButtonHoverBackgroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение фонового цвета кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ButtonPressedBackgroundProperty">
+            <summary>
+            Свойство зависимостей фонового цвета кнопок управления окном при нажатии.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetButtonPressedBackground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает фоновый цвет кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetButtonPressedBackground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает фоновый цвет кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnButtonPressedBackgroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение фонового цвета кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета заголовка и кнопок управления окном.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет заголовка и кнопок управления окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет заголовка и кнопок управления окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета заголовка и кнопок управления окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.InactiveForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета заголовка.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetInactiveForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет заголовка.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetInactiveForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет заголовка.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnInactiveForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета заголовка.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ButtonInactiveForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета кнопок управления неактивным окном.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetButtonInactiveForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет кнопок управления неактивным окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetButtonInactiveForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет кнопок управления неактивным окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnButtonInactiveForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета кнопок управления неактивным окном.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ButtonHoverForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета элементов кнопок управления окном при наведении.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetButtonHoverForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет элементов кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetButtonHoverForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет элементов кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnButtonHoverForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета кнопок управления окном при наведении.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+        <member name="F:OverToolkit.Shell.TitleBar.ButtonPressedForegroundProperty">
+            <summary>
+            Свойство зависимостей цвета элементов кнопок управления окном при нажатии.
+            </summary>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.GetButtonPressedForeground(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Получает цвет элементов кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.SetButtonPressedForeground(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.Media.SolidColorBrush)">
+            <summary>
+            Задает цвет элементов кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="value">Значение кисти.</param>
+        </member>
+        <member name="M:OverToolkit.Shell.TitleBar.OnButtonPressedForegroundPropertyChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Обрабатывает изменение цвета кнопок управления окном при нажатии.
+            </summary>
+            <param name="d">Объект зависимостей.</param>
+            <param name="e">Данные обработчика события.</param>
+        </member>
+    </members>
+</doc>
